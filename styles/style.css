@@ -1,0 +1,84 @@
+/* přesto že se jedná o cvičení na flexbox, není účelem dávat flex i tam, kam přirozeně patří disply: block nebo text-align */
+
+/* všechny odkazy vizuálně reagují na přejetí myší */
+
+/* kontejner nebude širší jak 1200px, a užší jak 600px; bude vycentrovaný */
+.container{
+    max-width: 1200px;
+    min-width: 600px;
+}
+
+/* datum je vystředěno ve čtverci o hraně 68px, mezi měsícem a dnem je bílá linka, pod dnem je modrá linka */
+.news{
+    display: flex;
+    align-items: center;
+}
+
+.news::before{
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: #3C7EC1;
+    border: 3px white solid;
+    border-radius: 50%;
+    margin: -3px;
+}
+
+.datum{
+    display: flex;
+    order: -1;
+    flex-direction: column;
+    align-items: center;
+    width: 68px;
+    height: 68px;
+}
+
+.datum::before{
+    content: "";
+    width: 90%;
+    background-color: white;
+    height: 1px;
+}
+
+.datum::after{
+    content: "";
+    width: 90%;
+    background-color: #3C7EC1;
+    height: 3px;
+}
+
+.mesic{
+    order: -1;
+}
+
+.box {
+    flex-grow: 1;
+    display: flex;
+}
+
+.text{
+    padding-right: 26px;
+}
+
+.text > a{
+    font-size: 0px;
+}
+
+.text > footer > a:hover{
+    text-decoration: none !important; 
+}
+
+header > h2 > a:hover{
+    color: gray !important; 
+}
+
+.text > a:hover::after{
+    background: lightgray !important;
+}
+
+/* mezi datumem a boxem je modrá tečka nebo čtverec (6px) s bílým okrajem (3px) */
+ 
+/* všechny boxy s perexem článku jsou stejně široké */
+/* nemělo by se stát, že červená šipka v bílém kroužku překryje text perexu */ 
+
+/* text "více" je prťavý tak, až není viditelný a odkaz ">" po najetí myší je zabarven do šedé rgb(204) */
